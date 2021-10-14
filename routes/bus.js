@@ -3,7 +3,7 @@ const router = new Router();
 
 
 router.get('/', (req, res) => {
-    res.send('hello word');
+    res.send('test');
 
 })
 
