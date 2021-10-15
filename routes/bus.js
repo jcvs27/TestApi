@@ -3,7 +3,7 @@ const router = new Router();
 
 
 router.get('/', (req, res) => {
-    res.send('test');
+    res.send('testApi');
 
 })
 
@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
     // Se difinen arreglos
     var viajes = new Array(); // Arreglo para almacenar los tamaños posible de x
     var numecupo = new Array(); // Arreglo para almacenar el número de cupo posible del bus
-
     // se suma el total de pasaejeros del arreglo
     arreglo.forEach(element => {
         x += parseInt(element);
@@ -41,13 +40,17 @@ router.post('/', (req, res) => {
             // si el total del grupo de persona satisface el numero de cupo(x) por viaje
             // se almacena (tamaños posible del bus(x))
             if (Acum == arreglo.length) {
-                viajes.push(numecupo[index_1]);
+               viajes.push(numecupo[index_1]);
+                
             }
         }
 
     }
-
-    res.json(viajes);
+    const response = {
+        sizes: JSON.stringify(viajes),
+    };
+    
+    res.send(response);
 
 })
 
