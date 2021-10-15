@@ -46,6 +46,8 @@ router.post('/', (req, res) => {
         }
 
     }
+
+    // Resultado
     const response = {
         sizes: JSON.stringify(viajes),
     };
